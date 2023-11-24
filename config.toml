@@ -1,4 +1,4 @@
-baseURL = 'https://dennismagnusson.fi/'
+baseURL = "https://dennismagnusson.fi/"
 languageCode = 'en-us'
 title = "Dennis Magnusson's Homepage"
-theme = 'lugo'
+theme = "lugo"
