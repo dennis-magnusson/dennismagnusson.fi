@@ -1,5 +1,5 @@
 ---
-title: "Dennis Magnusson's homepage"
+title: "Dennis Magnusson"
 ---
 
 Information technology student at [Aalto University School of Electrical Engineering](https://www.aalto.fi/en/school-of-electrical-engineering).
