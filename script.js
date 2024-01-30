@@ -1,7 +1,10 @@
-var squareSize = 10;
+var REVOLVING_SPEED = 0.025;
+var MAX_SIZE_FACTOR = 4;
+var SQUARE_SIZE = 10;
+
 var square = new Path.Rectangle(
   new Point(0, 0),
-  new Size(squareSize, squareSize)
+  new Size(SQUARE_SIZE, SQUARE_SIZE)
 );
 square.fillColor = "white";
 var symbol = new Symbol(square);
@@ -47,8 +50,8 @@ function handleEvent(event) {
 
       // remove if too big
       if (
-        child.bounds.width >= view.size.width / 2 ||
-        child.bounds.height >= view.size.height / 2
+        child.bounds.width >= view.size.width / MAX_SIZE_FACTOR ||
+        child.bounds.height >= view.size.height / MAX_SIZE_FACTOR
       ) {
         child.remove();
       }
@@ -62,4 +65,13 @@ function onMouseMove(event) {
 
 function onMouseDrag(event) {
   handleEvent(event);
+}
+
+// revolve the symbols around the center
+function onFrame(event) {
+  project.activeLayer.children.forEach(function (child) {
+    var vector = child.position.subtract(view.center);
+    var rotatedVector = vector.rotate(REVOLVING_SPEED);
+    child.position = view.center.add(rotatedVector);
+  });
 }
