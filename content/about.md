@@ -1,5 +1,8 @@
 ---
-title: "Dennis Magnusson"
+title: About
+date: 2024-03-21
+menu: main
+meta: true
 ---
 
 Information technology student at [Aalto University School of Electrical Engineering](https://www.aalto.fi/en/school-of-electrical-engineering).
