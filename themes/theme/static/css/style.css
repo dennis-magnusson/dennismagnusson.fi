@@ -1,0 +1,163 @@
+* {
+  --text-color: var(--text-color, #3a4145);
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* header and footer areas */
+.menu {
+  padding: 0;
+}
+.menu li {
+  display: inline-block;
+}
+.article-meta,
+.menu a {
+  text-decoration: none;
+  /* background: #517699;
+  color: #fdfefe; */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.menu,
+.article-meta,
+footer {
+  text-align: center;
+}
+.title {
+  font-size: 1.1em;
+  font-style: italic;
+}
+footer a {
+  text-decoration: none;
+}
+hr {
+  border-style: dashed;
+  color: #ddd;
+}
+
+/* code */
+pre {
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 1em;
+  overflow-x: auto;
+}
+code {
+  background: #f9f9f9;
+}
+pre code {
+  background: none;
+}
+
+/* misc elements */
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+main {
+  hyphens: auto;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  padding: 3px 1em 3px;
+}
+
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+table thead th {
+  border-bottom: 1px solid #ddd;
+}
+th,
+td {
+  padding: 5px;
+}
+thead,
+tfoot,
+tr:nth-child(even) {
+  background: #eee;
+}
+
+/* content lists */
+.article-element a {
+  display: block;
+}
+.article-list {
+  list-style-type: none;
+  padding: 0;
+}
+.article-list li {
+  position: relative;
+}
+.article-list li:not(:last-child)::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #ddd;
+  margin: 8px 0;
+}
+div.article-element {
+  display: flex;
+}
+div.article-date,
+div.article-data {
+  flex: 1;
+}
+div.article-data {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+div.article-data a {
+  color: inherit;
+  text-decoration: none;
+}
+div.article-data a h2 {
+  margin: 0;
+  color: inherit;
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: none;
+}
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+}
+.article-tags a {
+  text-decoration: none;
+}
+.article-tags .tag {
+  color: #3a4145c8;
+  border: 1px solid #3a4145c8;
+  border-radius: 5px;
+  padding: 4px 6px;
+  margin: 2px;
+  font-size: 0.7em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.article-data a p {
+  margin: 8px 0;
+}
+
+.article-date {
+  font-size: 0.9em;
+}
+
+.article-meta .article-tags {
+  justify-content: center;
+}

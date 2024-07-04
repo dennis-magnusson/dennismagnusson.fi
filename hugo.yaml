@@ -1,0 +1,22 @@
+baseURL: "https://dennismagnusson.fi/"
+languageCode: "en-us"
+title: "Dennis Magnusson"
+theme: "theme"
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: -200
+    - name: "Articles"
+      url: "/articles/"
+      weight: 0
+    - name: "About"
+      url: "/about/"
+      weight: -20
+
+taxonomies:
+  tag: tags
+
+params:
+  footer: "&copy; Dennis Magnusson {Year}"

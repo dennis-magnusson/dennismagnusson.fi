@@ -1,0 +1,29 @@
+{{ partial "header.html" . }} {{if not .IsHome }}
+<h1>Tag: {{ .Title | markdownify }}</h1>
+{{ end }} {{ .Content }}
+
+<ul class="article-list">
+  {{ $pages := .Pages }} {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end
+  }} {{ range (where $pages "Section" "!=" "") }} {{ $readingTime := math.Ceil
+  (div .WordCount 200) }}
+  <li class="article-list-item">
+    <div class="article-element">
+      <div class="article-date">
+        <div class="date">{{ .Date.Format "Jan 2, 2006" }}</div>
+        <div class="reading-time">{{ $readingTime }} min read</div>
+      </div>
+      <div class="article-data">
+        <a href="{{ .RelPermalink }}"><h2>{{ .Title | markdownify }}</h2></a>
+        <div class="article-tags">
+          {{ range .Params.tags }}
+          <a href="/tags/{{ . | urlize }}"><span class="tag">{{ . }}</span></a>
+          {{ end }}
+        </div>
+        <a href="{{ .RelPermalink }}"><p>{{ .Params.description }}</p></a>
+      </div>
+    </div>
+  </li>
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}
